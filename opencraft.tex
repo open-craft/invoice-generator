@@ -1,0 +1,100 @@
+\documentclass[11pt]{dinbrief}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+
+\address{Name Surname -- Software Engineer \\ Myaddress~42 \\[1ex] 55885~Mytown}
+\backaddress{Name Surname$\quad\circ\quad$Myaddress~42$\quad\circ\quad$55885~Mytown}
+\signature{Name Surname}
+\place{Mytown}
+\date{<< date >>}
+
+\nowindowrules
+\centeraddress
+\enabledraftstandard
+\renewcommand{\yourmailmsg}{My VAT identification number}
+\renewcommand{\signmsgnew}{Client VAT identification number}
+\renewcommand{\writermsg}{Invoice number}
+\renewcommand{\phonemsg}{}
+\renewcommand{\datemsg}{Invoice date}
+
+\begin{document}
+
+\begin{letter}{OpenCraft GmbH \\ c/o Dr. Jan Timmann \\ Jerusalemer Str. 14 \\[1ex]
+    10117 Berlin \\ Germany \\[1ex]
+  Tax number: 30/461/50060 \\
+  Handelsregister: HRB 174400 B Charlottenburg (Berlin)}
+
+  \yourmail{...}
+  \sign{DE306136588}
+  \writer{<< number >>}
+
+  \subject{\textbf{Invoice for services rendered between << from_date >> and << to_date >>}}
+
+  \opening{}
+
+  Reverse charge -- VAT liability rests with OpenCraft.  The hourly rate is
+  << hourly_rate|currency >>\,\euro.
+
+  \vspace{2ex}
+
+  \begin{longtable}{p{9.5cm}rrr}
+    \toprule
+    Item & Hours & Amount (\euro) & Subtotal (\euro) \\
+    \midrule
+    \endfirsthead
+    \toprule
+    Item & Hours & Amount (\euro) & Subtotal (\euro) \\
+    \midrule
+    \endhead
+    \textbf{Total} & & & \textbf{<< total|currency >>} \\
+    \bottomrule
+    \endlastfoot
+    <% for account in accounts %>
+      \textbf{<< account.name >>} \\
+      \nopagebreak
+      <% for issue in account.issues %>
+        \addlinespace[1ex]
+        \hfill
+        \begin{minipage}[b]{8.8cm}
+          << issue.key >> << issue.summary >>
+        \end{minipage}
+        & << issue.hours|currency >> & << issue.amount|currency >> \\
+      <% endfor %>
+      \addlinespace[1ex]
+      Subtotal for << account.name >>  & & & << account.total|currency >> \\
+      \nopagebreak
+      \midrule
+      \pagebreak[3]
+    <% endfor %>
+  \end{longtable}
+
+  \vspace{2ex}
+
+  Please transfer the amount due to this bank account: \nopagebreak
+
+  \begin{tabular}{ll}
+    Account holder & Name Surname \\
+    IBAN & ... \\
+    BIC & ... \\
+  \end{tabular}
+  \nopagebreak
+
+  \closing{Kind regards,}
+
+  \vspace{-2.4cm}
+  \includegraphics[width=3.5cm]{signature}
+
+%  \ps{}
+
+%  \encl{}
+
+\end{letter}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

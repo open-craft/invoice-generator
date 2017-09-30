@@ -1,0 +1,4 @@
+context:
+    hourly_rate: 1.00
+context_processor: opencraft.context_processor
+template_name: opencraft.tex
