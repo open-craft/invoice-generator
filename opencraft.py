@@ -31,7 +31,7 @@ def aggregate_data(data, hourly_rate):
             issue_key, dict(hours=0.0, amount=0.0))
         issue['key'] = issue_key
         issue['summary'] = latex.escape(entry['Issue summary'])
-        hours = float(entry['Billed Hours'])
+        hours = float(entry['Hours'])
         issue['hours'] += hours
         amount = hours * hourly_rate
         issue['amount'] += amount
