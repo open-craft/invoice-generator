@@ -27,4 +27,4 @@ Instructions
 More systems to automate invoices
 ---------------------------------
 
-- With this Google Spreadsheets sheet: https://drive.google.com/open?id=0BwOvzxi2VL0AUXdKMmJ0YjB6dEU (instructions in https://drive.google.com/open?id=1t6QKqkRCuqkDXCunmYmY2ysrAz5If3iylA8aEs8YuOI)
+- With [this Google Spreadsheets sheet](https://drive.google.com/open?id=0BwOvzxi2VL0AUXdKMmJ0YjB6dEU) ([instructions](https://drive.google.com/open?id=1t6QKqkRCuqkDXCunmYmY2ysrAz5If3iylA8aEs8YuOI))
