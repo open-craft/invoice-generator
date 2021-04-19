@@ -5,6 +5,8 @@ This program creates an invoice with the items from your JIRA work sheet. It inc
 
 The requirements are Python 3, Latex, Gnumeric (for the xls-to-csv conversion) and some Python packages (dateutil, Jinja2, PyYAML).
 
+**No longer maintained.**  This repository is no longer used, since invoicing is now automated with [opencraft/billing/accounting](https://gitlab.com/opencraft/billing/accounting).
+
 
 Instructions
 ------------
